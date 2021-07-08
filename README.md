@@ -112,13 +112,10 @@ Finally the chunk of code below deals with missmatch of array indices between th
 ## 4. Results
 From the data, the following results were generated:
 
-A | B
-- | - 
-![Alt text](Figure_1.png "a title") | ![Alt text](Figure_2.png "a title")
 
 <p float="left">
-  <img src="/Figure_1.png" width="600" />
-  <img src="/Figure_2.png" width="600" /> 
+  <img src="/Figure_1.png" width="500" />
+  <img src="/Figure_2.png" width="500" /> 
 </p>
 
 <p float="left">
