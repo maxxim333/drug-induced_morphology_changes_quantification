@@ -35,6 +35,8 @@ The PNG images outputed by ImageJ will serve as input data for CellProfiler. For
 3. The amount of branch-ends
 4. Total lenght of the neurites
 
+It also calculates the means, medians and standart deviations of these metrics.
+
 From these parameters, one could losely infer the morphology of the neuron as exemplified below:
 ![Alt text](githubimg2.001.jpeg "a title")
 
@@ -46,5 +48,10 @@ The CellProfiler pipeline is provided ("pipeline_29jun.cpproj" file and when loa
 After these changes, the program can be run. Ignore any messages that might arrise due to unused steps. The pipeline has some legacy steps. The steps the pipeline will do are illustrated in the image below.
 
 ![Alt text](Untitled.001.jpeg "a title")
+
+The relevant data for this data will be stored in the specified output folder in a csv under the name of "MyExpt_Image.csv" and this csv will be the input of the python script that will compute and represent all relevant statistics.
+
+## Statistical Analysis
+The python script will analyse groups of nine rows (because we have 9 images per well, and therefore  nine rows of output per well in the csv file). Then, it will calculate the means and standart deviations of each cluster of 9 parameters means. The final output will include only statistics for those drugs that have at least one of the parameters above the control with p-value <=0.05 measured by Welch's t-test.
 
 
