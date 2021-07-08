@@ -25,7 +25,7 @@ When running the macro (in Macro>Run) on ImageJ, it will ask you for input direc
 2. Runs "despeckle" function that cleans the image from fluorescent noise a little bit.
 
 
-![Alt text](github_images.001.jpeg "a title")
+![Alt text](image_github.001.jpeg "a title")
  
 
 
