@@ -68,17 +68,17 @@ If working with a file different from the one provided, there is a need to chang
 
 The following chunk of code should include indices of the wells corresponding to control wells instead of the existing ones:
 
-`
-    del means[52:55], means[97:100], means[142:145], means[187:190]
-    del standart_deviations[52:55], standart_deviations[97:100], standart_deviations[142:145], standart_deviations[187:190]
-    del pvalues[52:55], pvalues[97:100], pvalues[142:145], pvalues[187:190]
-    del labels[52:55], labels[97:100], labels[142:145], labels[187:190]
-`
+
+    `del means[52:55], means[97:100], means[142:145], means[187:190]`
+    `del standart_deviations[52:55], standart_deviations[97:100], standart_deviations[142:145], standart_deviations[187:190]`
+    `del pvalues[52:55], pvalues[97:100], pvalues[142:145], pvalues[187:190]`
+    `del labels[52:55], labels[97:100], labels[142:145], labels[187:190]`
 
 
 Finally the chunk of code below deals with missmatch of array indices between the array "significant" and the arrays defined within the function "ttestsignificant". The logical comparisons between the variable "j" and indices should be modified or deleted based on the specific layout of the. data and relative positions of the control wells:
-`
-            if j==0:
+
+
+            `if j==0:
                 bar_x.append(labels[j])
                 bar_height.append(means[j])
                 bar_tick_label.append(labels[j])
@@ -107,7 +107,4 @@ Finally the chunk of code below deals with missmatch of array indices between th
                 bar_height.append(means[j - 8])
                 bar_tick_label.append(labels[j - 8])
                 bar_label.append(pvalues[j - 8])
-                new_st.append(standart_deviations[j - 8])
-                
-                
-                `
+                new_st.append(standart_deviations[j - 8])`
