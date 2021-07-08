@@ -122,7 +122,7 @@ A | B
 </p>
 
 <p float="left">
-  <img src="/FFigure_3.png" width="500" />
+  <img src="/Figure_3.png" width="500" />
   <img src="/Figure_4.png" width="500" /> 
 </p>
 
