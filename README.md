@@ -24,9 +24,16 @@ When running the macro (in Macro>Run) on ImageJ, it will ask you for input direc
 1. Automatically adjusts brightness and contrast of the image
 2. Runs "despeckle" function that cleans the image from fluorescent noise a little bit.
 
-The macro transforms &nbsp; &nbsp;&nbsp;&nbsp;  THIS &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;   into  &nbsp;  &nbsp;  &nbsp;  &nbsp; &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;   THIS
+The macro transforms &nbsp; &nbsp;&nbsp;&nbsp;  THIS &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;   into  &nbsp;  &nbsp;  &nbsp;  &nbsp; &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp; &nbsp; &nbsp;  THIS
 ![Alt text](image_github.001.jpeg "a title")
  
 
+## 2. Quantification of cell morphological parameters by CellProfiler
+The PNG images outputed by ImageJ will serve as input data for CellProfiler. For each of the 9 images of each of the wells, it will identify and separate the nuclei based on the signal from DAPI channel. Then, it will superpose the MAP2 signal over the identified nuclei, "skeletize" the neurons (i.e. transform the neurite outlied in a one-pixel wide lines. From this superposed images, it will extract (for each nuclei) four main parameters:
+1. The amount of neurites that originates from the nucleus.
+2. The amount of branching points of all the neurons that originates from one particular nuclei
+3. The amount of branch-ends
+4. Total lenght of the neurites
 
+From these parameters, one could losely infer the morphology of the neuron as exemplified below:
 
