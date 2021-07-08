@@ -44,3 +44,7 @@ The CellProfiler pipeline is provided ("pipeline_29jun.cpproj" file and when loa
 - In the OutputToSpreadsheet step, the "Default location" for the output needs to be changed.
 
 After these changes, the program can be run. Ignore any messages that might arrise due to unused steps. The pipeline has some legacy steps. The steps the pipeline will do are illustrated in the image below.
+
+![Alt text](Untitled.001.jpeg "a title")
+
+
