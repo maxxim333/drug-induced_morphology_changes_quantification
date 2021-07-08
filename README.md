@@ -108,3 +108,7 @@ Finally the chunk of code below deals with missmatch of array indices between th
                 bar_tick_label.append(labels[j - 8])
                 bar_label.append(pvalues[j - 8])
                 new_st.append(standart_deviations[j - 8])`
+
+## 4. Results
+From the data, the following results were generated:
+
