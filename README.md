@@ -111,4 +111,7 @@ Finally the chunk of code below deals with missmatch of array indices between th
 
 ## 4. Results
 From the data, the following results were generated:
+![Alt text](Figure_1.png "a title")
+
+
 
