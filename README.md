@@ -117,9 +117,13 @@ A | B
 ![Alt text](Figure_1.png "a title") | ![Alt text](Figure_2.png "a title")
 
 <p float="left">
-  <img src="/Figure_1.png" width="100" />
-  <img src="/Figure_2.png" width="100" /> 
+  <img src="/Figure_1.png" width="500" />
+  <img src="/Figure_2.png" width="500" /> 
 </p>
 
+<p float="left">
+  <img src="/FFigure_3.png" width="500" />
+  <img src="/Figure_4.png" width="500" /> 
+</p>
 
 
