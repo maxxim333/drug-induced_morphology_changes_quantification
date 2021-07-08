@@ -54,4 +54,14 @@ The relevant data for this data will be stored in the specified output folder in
 ## Statistical Analysis
 The python script will analyse groups of nine rows (because we have 9 images per well, and therefore  nine rows of output per well in the csv file). Then, it will calculate the means and standart deviations of each cluster of 9 parameters means. The final output will include only statistics for those drugs that have at least one of the parameters above the control with p-value <=0.05 measured by Welch's t-test.
 
+The file provided here called "MyExpt_Image_all.csv" can be used as input and it corresponds to a result of running ImageJ macro and CellProfiler pipeline on 288 wells (2592 image pairs).
+
+The lines that need to be changed in the script are:
+
+`with open('/Users/maxxim333/Desktop/herrington/05_jul/MyExpt_Image_all.csv') as file:` to desired input file name and location of said input file.
+
+If working with a file different from the one provided, there is a need to change these lines:
+`number_of_wells=288` to the number of wells you are working with
+
+
 
