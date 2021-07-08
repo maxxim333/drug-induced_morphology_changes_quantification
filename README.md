@@ -37,3 +37,10 @@ The PNG images outputed by ImageJ will serve as input data for CellProfiler. For
 
 From these parameters, one could losely infer the morphology of the neuron as exemplified below:
 ![Alt text](githubimg2.001.jpeg "a title")
+
+The CellProfiler pipeline is provided ("pipeline_29jun.cpproj" file and when loaded, the following parameters need to be changed in order to match the directories of the new machine:
+- In the "Images" step, output images from ImageJ macro should be loaded and the old ones removed from the list of images to process. 
+- In "NamesAndTypes", click "Update". The images should be nicely paired. Each pair needs to have a DAPI and a MAP3 image and there should not be any unpaired images.
+- In the OutputToSpreadsheet step, the "Default location" for the output needs to be changed.
+
+After these changes, the program can be run. Ignore any messages that might arrise due to unused steps. The pipeline has some legacy steps. The steps the pipeline will do are illustrated in the image below.
