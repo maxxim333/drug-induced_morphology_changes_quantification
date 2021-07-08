@@ -61,7 +61,53 @@ The lines that need to be changed in the script are:
 `with open('/Users/maxxim333/Desktop/herrington/05_jul/MyExpt_Image_all.csv') as file:` to desired input file name and location of said input file.
 
 If working with a file different from the one provided, there is a need to change these lines:
-`number_of_wells=288` to the number of wells you are working with
+
+`number_of_wells=288` to the number of wells you are working with (will always be number of images divided by 9)
+
+`control = (array[np.r_[51:54,99:102,147:150,195:198]]).reshape(-1)` to specify which of the wells correspond to control (untreated wells)
+
+The following chunk of code should include indices of the wells corresponding to control wells instead of the existing ones:
+
+`
+    del means[52:55], means[97:100], means[142:145], means[187:190]
+    del standart_deviations[52:55], standart_deviations[97:100], standart_deviations[142:145], standart_deviations[187:190]
+    del pvalues[52:55], pvalues[97:100], pvalues[142:145], pvalues[187:190]
+    del labels[52:55], labels[97:100], labels[142:145], labels[187:190]
+`
 
 
-
+Finally the chunk of code below deals with missmatch of array indices between the array "significant" and the arrays defined within the function "ttestsignificant". The logical comparisons between the variable "j" and indices should be modified or deleted based on the specific layout of the. data and relative positions of the control wells:
+`
+            if j==0:
+                bar_x.append(labels[j])
+                bar_height.append(means[j])
+                bar_tick_label.append(labels[j])
+                bar_label.append(pvalues[j])
+                new_st.append(standart_deviations[j])
+            elif j>0 and j<52:
+                bar_x.append(labels[j+1])
+                bar_height.append(means[j+1])
+                bar_tick_label.append(labels[j+1])
+                bar_label.append(pvalues[j+1])
+                new_st.append(standart_deviations[j+1])
+            elif j>=52 and j<100:
+                bar_x.append(labels[j-2])
+                bar_height.append(means[j-2])
+                bar_tick_label.append(labels[j-2])
+                bar_label.append(pvalues[j-2])
+                new_st.append(standart_deviations[j-2])
+            elif j >= 100 and j < 148:
+                bar_x.append(labels[j - 5])
+                bar_height.append(means[j - 5])
+                bar_tick_label.append(labels[j - 5])
+                bar_label.append(pvalues[j - 5])
+                new_st.append(standart_deviations[j - 5])
+            elif j>=148 and j<196:
+                bar_x.append(labels[j - 8])
+                bar_height.append(means[j - 8])
+                bar_tick_label.append(labels[j - 8])
+                bar_label.append(pvalues[j - 8])
+                new_st.append(standart_deviations[j - 8])
+                
+                
+                `
