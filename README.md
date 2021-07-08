@@ -36,4 +36,4 @@ The PNG images outputed by ImageJ will serve as input data for CellProfiler. For
 4. Total lenght of the neurites
 
 From these parameters, one could losely infer the morphology of the neuron as exemplified below:
-![Alt text](githubimg.001.jpeg "a title")
+![Alt text](githubimg2.001.jpeg "a title")
