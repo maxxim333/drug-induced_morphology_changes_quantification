@@ -126,4 +126,13 @@ From the data, the following results were generated:
 
 ## Technical and methodological difficulties and possible solutions
 ### Wet-lab
-*Inconsistent cell density and cell death
+#### Inconsistent cell density and cell death.
+Even though innitially equal number of cells were seeded in each well, the resulting number of cells on day 30 (just before treating the cells with drugs) varied quite significantly from one well to another. This isn't such a big problem per se, since the neurite parameters are calculated and averaged and then corrected to the number of nuclei. The reall problem arises when there are very few cells alive and no meaningful information can be extracted from the imaging. Additionally, when there are very few cells, it is usually accompanied by too much cell debris that floods the signal with noise. This effect is more pronounced in the peripheral wells (first and last rows and first and last column of the plate). I presume it happens because we work with 368 well-pkate; the working volume is very low (20uL) and the effect of evaporation is very significant under these conditions, leading to cells being "dry" after prolonged stay in incubator. This affects specially in the peripheral wells.
+
+Possible solutions:
+* Working with 96-well plates. The working volume will be bigger and the effect of evaporation won't be so noticeable.
+* Don't use peripheral wells. Cultivate the cells in all the wells except the peripheral. Fill the peripheral wells with PBS to "shield" the internal wells from evaporation
+
+
+#### Peculiar "clustered" pattern of cell growth
+In many wells, cells aggregate in clusters, often growing on top of eachother. It impedes visualizing part of the neurites since they might be burried inside the blob of cells and even if they can be visualized, it will be unclear to which neuron it belongs. Additionally, neuron projections in these cluster tend to form bundles and connect with the neighboring clusters. It makes it unclear how to quantify these neurons since there is no way to know how many neurites are in a bundle.
