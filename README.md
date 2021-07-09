@@ -124,7 +124,7 @@ From the data, the following results were generated:
 </p>
 
 
-## Technical and methodological difficulties and possible solutions
+## Technical and methodological difficulties, limitations and possible solutions
 ### Wet-lab
 #### Inconsistent cell density and cell death.
 Even though innitially equal number of cells were seeded in each well, the resulting number of cells on day 30 (just before treating the cells with drugs) varied quite significantly from one well to another. This isn't such a big problem per se, since the neurite parameters are calculated and averaged and then corrected to the number of nuclei. The reall problem arises when there are very few cells alive and no meaningful information can be extracted from the imaging. Additionally, when there are very few cells, it is usually accompanied by too much cell debris that floods the signal with noise. This effect is more pronounced in the peripheral wells (first and last rows and first and last column of the plate). I presume it happens because we work with 368 well-pkate; the working volume is very low (20uL) and the effect of evaporation is very significant under these conditions, leading to cells being "dry" after prolonged stay in incubator. This affects specially in the peripheral wells.
@@ -152,4 +152,14 @@ When automating image acquisition with Leica Thunder, one has to program the nat
 
 ### Data Analysis
 #### Skeletize function has too much seemingly random noise.
+Probably the biggest limitation of all. You will see how in the skeletized output image there are long lines coinciding with the pattern of neurites in the input image of neurites (MAP3 staining), but also a lot of short lines everywhere else in the image. This floods the subsequent calculation of neurite parameters with a lot of noise.
 
+I tried to play with parameters of “denskel” in the “Morph” module. I tried to “enhance” neurites via “EnhanceOrSuppressFeature” module. I also considered that the reason those seeminlgy random skeletons are being drawn is because there is some signal that I can’t seen with my naked eyes but CellProfiler finds it and considers them to be neurons, so I tried to “despeckle” the image prior to skeletonize but it helps very little with small “feature size” parameter and with big feature sizes, it “erases” real neurites. I also use the "despeckle" function in ImageJ, even before loading the data to CellProfiler, but it doesn't seem to help.
+
+>Possiible solutions:
+* Keep searching ways to improve skeletonize function. This can be done either by playing with skeletonize parameters (however I have exhausted all the possibilities here) or trying to improve image upstream so the input of skeletonize function will be a clearer image.
+* Try using a different software, other than CellProfiler.
+
+#### Unclear what is the best practice for using control data.
+Basically I have 3 control wells (cells were treated with PBS only; no drug) every 3 rows (or every 72 wells); a total of 12 control wells. I planned it this way because I already antecipated high variability of cell density in different regions of the plate (meantioned earlier). My worry was that if I concentrated control wells in the same row, column or corner of the plate, the difference in neurite parameters between control and drug-treated cells would be because of the relative position of the well in the plate and not the effect of the drug. But this layout ended up to be desirable because another reason: the loss of focus between two wells that are far enough from each other. Now, there are two types of possible ways to analyze the data and I'm unsure which one is more appropriate:
+* Combining data from ALL the control wells (12), performing statistics on this data and compare it to drug-treated wells: This will give more statistical robustness to the control wells as there are 4x more data. However, it results in a very big standart deviation; indeed, the measurement of control well in the 3rd row (closer to the corner of the plate) won't be the same as in a well in the middle of the plate, even when both wells are control.
