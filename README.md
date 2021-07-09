@@ -142,4 +142,14 @@ In many wells, cells aggregate in clusters, often growing on top of eachother. I
 * Decrease differentiation time. I noticed that this peculiar organization of cells happens progressively; they sart growing sparcely and organize clusters over time, so performing treatment/imaging earlier would solve this problem. However, it will also mean that the cells are will not be fully differentiated and this can affect the accuracy of analysis, since the markers we are studying will certainly have a different expression pattern and differentiated VS iPSC or partially-differentiated cells. Not to mention the fact we will be studying the effect of drugs on partially-differentiated cells and not striatal cells, which is arguably a completely different experiment.
 * Decreasing innitial cell density. Seeding less cells will also solve the problem, however it's also risky; as mentioned before high celular death rendered some of the wells in the study unusable.
 
+### Imaging
+#### Images going gradually out-of-focus. 
+When automating image acquisition with Leica Thunder, one has to program the native software (LAS X) to run well from well taking imaging of different customizable regions of the well. Then, the platform moves to place the objective of the microscope under the next well and repeats the process. The problem I found is that as the platform moves to the next welll, the images become slightly less focused. The effect is cumulative and the wells further from the starting point become significantly unfocused. This happens even when the native function of adjusting focus is active in the microscope native software; it doesn't seem to work very well.
+
+>Possible solutions:
+* Manually adjust focus every N wells. It can solve the problem but also means the process is much less automated since I have to do the image acquisition in small batches.
+
+
+### Data Analysis
+#### Skeletize function has too much seemingly random noise.
 
