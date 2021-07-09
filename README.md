@@ -114,13 +114,16 @@ From the data, the following results were generated:
 
 
 <p float="left">
-  <img src="/Figure_1.png" width="500" />
-  <img src="/Figure_2.png" width="500" /> 
+  <img src="/Figure_1.png" width="400" />
+  <img src="/Figure_2.png" width="400" /> 
 </p>
 
 <p float="left">
-  <img src="/Figure_3.png" width="500" />
-  <img src="/Figure_4.png" width="500" /> 
+  <img src="/Figure_3.png" width="400" />
+  <img src="/Figure_4.png" width="400" /> 
 </p>
 
 
+## Technical and methodological difficulties and possible solutions
+### Wet-lab
+*Inconsistent cell density and cell death
