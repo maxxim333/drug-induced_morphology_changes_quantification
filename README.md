@@ -129,10 +129,17 @@ From the data, the following results were generated:
 #### Inconsistent cell density and cell death.
 Even though innitially equal number of cells were seeded in each well, the resulting number of cells on day 30 (just before treating the cells with drugs) varied quite significantly from one well to another. This isn't such a big problem per se, since the neurite parameters are calculated and averaged and then corrected to the number of nuclei. The reall problem arises when there are very few cells alive and no meaningful information can be extracted from the imaging. Additionally, when there are very few cells, it is usually accompanied by too much cell debris that floods the signal with noise. This effect is more pronounced in the peripheral wells (first and last rows and first and last column of the plate). I presume it happens because we work with 368 well-pkate; the working volume is very low (20uL) and the effect of evaporation is very significant under these conditions, leading to cells being "dry" after prolonged stay in incubator. This affects specially in the peripheral wells.
 
-Possible solutions:
+>Possible solutions:
 * Working with 96-well plates. The working volume will be bigger and the effect of evaporation won't be so noticeable.
 * Don't use peripheral wells. Cultivate the cells in all the wells except the peripheral. Fill the peripheral wells with PBS to "shield" the internal wells from evaporation
 
 
 #### Peculiar "clustered" pattern of cell growth
 In many wells, cells aggregate in clusters, often growing on top of eachother. It impedes visualizing part of the neurites since they might be burried inside the blob of cells and even if they can be visualized, it will be unclear to which neuron it belongs. Additionally, neuron projections in these cluster tend to form bundles and connect with the neighboring clusters. It makes it unclear how to quantify these neurons since there is no way to know how many neurites are in a bundle.
+
+>Possible solutions:
+* Increase Borate Buffer concentration in pre-treatment or change pre-treatment. Prior to culture the cells, I pre-treatment of wells with Boric Acid / Borate buffer was made. This pre-treatment was supposed to make the cells tend to grow more sparcely according to provider's specifications. Obviously it didn't work, either because the strategy itself doesn't work or it was done wrong. A possible solution would be to increase the concentration of Borate / Boric acid in the pre-treatment or search for another pre-treatment strategy with another compound. It is to note that Borate Buffer is toxic, that's why low concentrations and incubation times were used.
+* Decrease differentiation time. I noticed that this peculiar organization of cells happens progressively; they sart growing sparcely and organize clusters over time, so performing treatment/imaging earlier would solve this problem. However, it will also mean that the cells are will not be fully differentiated and this can affect the accuracy of analysis, since the markers we are studying will certainly have a different expression pattern and differentiated VS iPSC or partially-differentiated cells. Not to mention the fact we will be studying the effect of drugs on partially-differentiated cells and not striatal cells, which is arguably a completely different experiment.
+* Decreasing innitial cell density. Seeding less cells will also solve the problem, however it's also risky; as mentioned before high celular death rendered some of the wells in the study unusable.
+
+
